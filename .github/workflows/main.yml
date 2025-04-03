@@ -30,10 +30,6 @@ jobs:
     strategy:
       matrix:
         node-version: [20]
-    env:
-      VITE_SUPABASE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6ZWN1c2p0cHFqZHp4Ymh1YmJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU0MTEwODcsImV4cCI6MjAxMDk4NzA4N30._v3Il3xExbo1P_5cFbb_RKgFB3YUMyKDci9RVL0Tfdk
-      VITE_SUPABASE_URL: https://gzecusjtpqjdzxbhubby.supabase.co
-      VITE_MAPTILER_KEY: Uxk3muRsTeuq7JaX6dnS
     steps:
       - name: Checkout
         uses: actions/checkout@v4
