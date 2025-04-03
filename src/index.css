@@ -1,0 +1,149 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-gray: #151515;
+  --color-pink: #fdbcbc;
+  --color-teal: #a0b5aa;
+  --color-beige: #efe9d3;
+  --color-transparent-gray: rgba(216, 216, 215, 0.9);
+  --color-transparent-black: rgba(0, 0, 0, 0.3);
+
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+  --color-red-950: #450a0a;
+
+  --font-*: initial;
+  --font-lato: Lato;
+  --font-virilica: Virilica;
+
+  --animate-draw: dash 400ms linear alternate forwards;
+  --animate-single-ping: scale 400ms ease-out;
+  --animate-burger-to-close: burgerToClose 450ms linear 1 normal forwards;
+  --animate-close-to-burger: closeToBurger 450ms linear 1 normal forwards;
+  --animate-move-and-appear: moveAndAppear 600ms ease;
+  --animate-appear: appear 300ms ease-in;
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 30;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes scale {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.4);
+    }
+  }
+  @keyframes burgerToClose {
+    0% {
+      d: path(
+        'M3.75,6.75C3.75,6.75,8.041849,6.75,12.24776,6.75C16.288542,6.75,20.25,6.75,20.25,6.75M3.75,12C3.75,12,20.25,12,20.25,12M3.75,17.25C3.75,17.25,7.606399,17.25,11.590466,17.25C15.847357,17.25,20.25,17.25,20.25,17.25'
+      );
+      animation-timing-function: cubic-bezier(0.25, 1, 0.25, 1);
+    }
+    100% {
+      d: path(
+        'M5.849994,5.9135C5.849994,5.9135,11.849994,11.9135,11.849994,11.9135C11.849994,11.9135,17.849994,5.9135,17.849994,5.9135M11.849994,12C11.849994,12,11.849994,12,11.849994,12M5.849994,17.9135C5.849994,17.9135,11.849994,11.9135,11.849994,11.9135C11.849994,11.9135,17.849994,17.9135,17.849994,17.9135'
+      );
+    }
+  }
+  @keyframes closeToBurger {
+    0% {
+      d: path(
+        'M5.849994,5.9135C5.849994,5.9135,11.849994,11.9135,11.849994,11.9135C11.849994,11.9135,17.849994,5.9135,17.849994,5.9135M11.849994,12C11.849994,12,11.849994,12,11.849994,12M5.849994,17.9135C5.849994,17.9135,11.849994,11.9135,11.849994,11.9135C11.849994,11.9135,17.849994,17.9135,17.849994,17.9135'
+      );
+      animation-timing-function: cubic-bezier(0.25, 1, 0.25, 1);
+    }
+    100% {
+      d: path(
+        'M3.75,6.75C3.75,6.75,8.041849,6.75,12.24776,6.75C16.288542,6.75,20.25,6.75,20.25,6.75M3.75,12C3.75,12,20.25,12,20.25,12M3.75,17.25C3.75,17.25,7.606399,17.25,11.590466,17.25C15.847357,17.25,20.25,17.25,20.25,17.25'
+      );
+    }
+  }
+  @keyframes moveAndAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  @font-face {
+    font-family: "Virilica";
+    src: url("/virilica.otf");
+  }
+
+  @font-face {
+    font-family: "Lato";
+    src: url("/Lato-Regular.ttf");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "Lato";
+    src: url("/Lato-Bold.ttf");
+    font-weight: 700;
+  }
+}
+

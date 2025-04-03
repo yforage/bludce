@@ -1,0 +1,10 @@
+[
+  {
+    "value": "card",
+    "displayName": "Банковская карта"
+  },
+  {
+    "value": "sbp",
+    "displayName": "Система быстрых платежей"
+  }
+]
